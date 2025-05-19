@@ -39,58 +39,59 @@ let bag = "påse";
 
 function playGame() {
 // användares val
-let pChoice = prompt("Välj sten, sax, eller påse");
-    if (pChoice === stone) {
-        console.log("Spelare valde: " + pChoice);
-    } else if (pChoice === scissor) {
-        console.log("Spelare valde: " + pChoice);
-    } else if (pChoice === bag) {
-        console.log("Spelare valde: " + pChoice);
-    } else if (pChoice !== stone && pChoice !== scissor && pChoice !== bag) {
-        console.log("Ogiltigt val");
-        return;
-    } 
+    let pChoice = prompt("Välj sten, sax, eller påse");
+        if (pChoice === stone) {
+            console.log("Spelare valde: " + pChoice);
+        } else if (pChoice === scissor) {
+            console.log("Spelare valde: " + pChoice);
+        } else if (pChoice === bag) {
+            console.log("Spelare valde: " + pChoice);
+        } else if (pChoice !== stone && pChoice !== scissor && pChoice !== bag) {
+            console.log("Ogiltigt val");
+            return;
+        } 
 
-    // datorns val (tricky!!)
+        // datorns val (tricky!!)
 
-let random = Math.floor(Math.random() *3)
-let cChoice = ""
-    if (random === 0) {
-        cChoice = stone;
-        console.log("Datorn valde: " + cChoice);
-    }   else if (random === 1) {
-        cChoice = scissor;
-        console.log("Datorn valde: " + cChoice);
-    }   else if (random === 2) {
-        cChoice = bag;
-        console.log("Datorn valde: " + cChoice);
-    }
-     //oavgjort
-    if (pChoice === cChoice) {
-        console.log("Oavgjort");
-        return;
+    let random = Math.floor(Math.random() *3)
+    let cChoice = ""
+        if (random === 0) {
+            cChoice = stone;
+            console.log("Datorn valde: " + cChoice);
+        }   else if (random === 1) {
+            cChoice = scissor;
+            console.log("Datorn valde: " + cChoice);
+        }   else if (random === 2) {
+            cChoice = bag;
+            console.log("Datorn valde: " + cChoice);
         }
-    
-    //spelare vinner
-    if (pChoice === stone && cChoice === scissor) {
-        console.log("Spelare vinner");
-    } else if (pChoice === scissor && cChoice === bag) {
-        console.log("Spelare vinner");
-    } else if (pChoice === bag && cChoice === stone) {
-        console.log("Spelare vinner");
-    } else {console.log("Datorn vinner");
-        return;
-    }
-}   
-    //fortsätt spela
-let contPlaying = true
-    while (contPlaying) {
-        playGame();
-            let again =prompt("Vill du spela igen? ja eller nej");
-        if (again === "ja") {
-            contPlaying = true;
-        } else if (again !== "ja") {
-            contPlaying = false;
-            console.log("Tack för spelet!")
-        }   
-    }
+        //oavgjort
+        if (pChoice === cChoice) {
+            console.log("Oavgjort");
+            return;
+            }
+        
+        //spelare vinner
+        if (pChoice === stone && cChoice === scissor) {
+            console.log("Spelare vinner");
+        } else if (pChoice === scissor && cChoice === bag) {
+            console.log("Spelare vinner");
+        } else if (pChoice === bag && cChoice === stone) {
+            console.log("Spelare vinner");
+        } else {console.log("Datorn vinner");
+            return;
+        }
+    }   
+        //fortsätt spela
+    let contPlaying = true
+        while (contPlaying) {
+            playGame();
+                let again =prompt("Vill du spela igen? ja eller nej");
+            if (again === "ja") {
+                contPlaying = true;
+            } else if (again !== "ja") {
+                contPlaying = false;
+                console.log("Tack för spelet!")
+            }   
+        
+}
